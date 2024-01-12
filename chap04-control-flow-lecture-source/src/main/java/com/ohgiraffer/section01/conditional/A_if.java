@@ -9,9 +9,9 @@ public class A_if {
     public A_if(){scanner = new Scanner(System.in);}
 
     public void testSimpleIfStatement() {
+        /*수업목표.단독 if문의 흐름을 이해하고 적용할 수 있다.*/
         insert_input();
         testSimpleIfStatement_solve();
-
     }
 
     private void testSimpleIfStatement_solve() {
@@ -24,9 +24,9 @@ public class A_if {
          * */
         if(input%2 ==0){
             System.out.println("짝수입니다.");
-        }else {
-            System.out.println("홀수입니다.");
+            return;
         }
+        System.out.println("홀수입니다.");
     }
 
     private void insert_input() {
@@ -36,6 +36,16 @@ public class A_if {
 
 
     public void testNestedIfStatement() {
+        /*수업목표.중첩 if문의 흐름을 이해하고 적용할 수 있다.*/
+        insert_input();
+        testNestedIfStatement_solve();
+        testSimpleIfStatement_solve();
+    }
 
+    private void testNestedIfStatement_solve() {
+        if(input>0 ){
+            System.out.printf("입력 받은 값은 양수이면서 ");
+        }else
+            System.out.printf("입력 받은 값은 음수이면서 ");
     }
 }
