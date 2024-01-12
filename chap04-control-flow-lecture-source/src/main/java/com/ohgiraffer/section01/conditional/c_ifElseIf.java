@@ -34,7 +34,7 @@ public class c_ifElseIf {
                 break;
             }
             StudentGradeEng();
-            hashMap.put(name,student_Grade_eng);
+            // hashMap.put(name,student_Grade_eng);
             System.out.println(name + " 학생의 점수는 " + Grade + "점이고, 등급은 " + student_Grade_eng + "입니다.");
         }
 

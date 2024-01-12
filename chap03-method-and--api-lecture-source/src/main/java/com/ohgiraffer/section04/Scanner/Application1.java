@@ -1,5 +1,4 @@
 package com.ohgiraffer.section04.Scanner;
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -32,7 +31,7 @@ public class Application1 {
         boolean isHuman = scanner.nextBoolean();
         System.out.println(isHuman? "Human" : "Robot" );
 
-        scanner.nextLine(); //참고. 중간에 남은 공백 및 개행 제거하기 위함 -> 아래 nextline()쓸 떄 발생하는 에러 제거 가능!!
+        //scanner.nextLine(); //참고. 중간에 남은 공백 및 개행 제거하기 위함 -> 아래 nextline()쓸 떄 발생하는 에러 제거 가능!!
         /*목차. 5. 문자형 입력받기*/
         System.out.println("sex insert(M or F): ");
         char sex = scanner.next().charAt(0);  // 참고. 세줄 위에 위에 scanner.nextLine() 없으면 nextline 에러 발생
