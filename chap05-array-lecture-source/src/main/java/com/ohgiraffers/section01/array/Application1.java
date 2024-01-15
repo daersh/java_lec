@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.array;
 
+import java.util.Arrays;
+
 public class Application1 {
     public static void main(String[] args) {
         /*수업목표. 배열에 대해 이해하고 배열의 사용목적을 이해할 수 있다.*/
@@ -20,12 +22,22 @@ public class Application1 {
         sum+=num3;
         sum+=num4;
         sum+=num5;
-        System.out.println("sum = " + sum);
+//        System.out.println("sum = " + sum);
 
         /*필기. 이와 같은 작업을 배열로 활용*/
         int[] arr1 = new int[5];
         int[] arr2 = {1, 2, 3, 4, 5};
-        
+        /*설명. 각 배열에 접근하여 각각 값을 대입*/
+        for(int i=0;i <5;i++){
+            arr1[i] += 10*(i+1);
+//            System.out.println("arr1 = " + arr1[i]);
+        }
+        /*설명. 각배열에 접근하여 값을 불러와 출력하기*/
+        for(int i=0;i < arr1.length;i++){
+            System.out.println("arr1 = " + arr1[i]);
+        }
+        /*설명. 간단하게 출력해보기*/
+        System.out.println(Arrays.toString(arr1));
 
     }
 }
