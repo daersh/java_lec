@@ -30,6 +30,5 @@ public class A_break {
             System.out.println();
         }
     }
-
     /*수업목표. */
 }
