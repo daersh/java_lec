@@ -18,7 +18,7 @@ public class Application1 {
         /*필기. 중첩된 반복문을 하나의 기능으로 분리하는 예제*/
 //        bClass.printUpgradeGugudanFromTwoToNine();
         /*필기. 별찍기*/
-//        bClass.printStars();
+        bClass.printStars();
 
         C_while cClass= new C_while();
         /*필기. 단독 while문 흐름 확인용 메소드 호출*/
@@ -28,7 +28,7 @@ public class Application1 {
 
         D_doWhile dClass = new D_doWhile();
         /*필기. 단독 do-while문 흐름 확인용 메소드 호출*/
-        dClass.testSimpleDoWhileStatement();
-        dClass.testDoWhileExample();
+//        dClass.testSimpleDoWhileStatement();
+//        dClass.testDoWhileExample();
     }
 }

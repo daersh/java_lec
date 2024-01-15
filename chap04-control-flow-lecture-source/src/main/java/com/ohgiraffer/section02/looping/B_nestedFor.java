@@ -1,5 +1,7 @@
 package com.ohgiraffer.section02.looping;
 
+import java.util.Scanner;
+
 public class B_nestedFor {
     public void printGugudanFromTwoToNine() {
         /*수업목표. 중첩된 for문의 흐름 이해하고 적용할 수 있다.*/
@@ -63,14 +65,16 @@ public class B_nestedFor {
         *               *
         *
         * */
-
-        for(int i=1;i<6;i++){
-            int cnt=5;
-            for(int j=i; j<3;j++){
+        int x;
+        Scanner sc = new Scanner(System.in);
+        x= sc.nextInt();
+        for(int i=1;i<=x;i++){
+            int cnt=x;
+            for(int j=i; j<x/2+1;j++){
                 System.out.print(' ');
                 cnt-=2;
             }
-            for(int j=i;j>3;j--){
+            for(int j=i;j>x/2+1;j--){
                 System.out.print(' ');
                 cnt-=2;
             }
