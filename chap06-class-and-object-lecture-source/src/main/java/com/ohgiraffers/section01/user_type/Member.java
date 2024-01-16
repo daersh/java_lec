@@ -17,6 +17,7 @@ public class Member {
         this.pw = "default-pw";
         this.name = "default-name";
         this.age = 0;
+
         this.gender = 'X';
         hobby=null;
     };
