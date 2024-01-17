@@ -53,6 +53,8 @@ public class Application {
         pt.testVariableLengthArrayParameter();
         pt.testVariableLengthArrayParameter("홍길동");
         pt.testVariableLengthArrayParameter("유관순","볼링");
+        pt.testVariableLengthArrayParameter(new String[]{"강감찬","볼링","낚시","담배"});
+
     }
 }
 
