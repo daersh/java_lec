@@ -1,4 +1,4 @@
-package com.ohgiraffers.section5.overloading;
+package com.ohgiraffers.section05.overloading;
 
 public class OverLoadingTest {
     /* 수업목표.
