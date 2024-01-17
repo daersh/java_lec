@@ -25,19 +25,23 @@ public class UserDTO {
     private String name;
     private Date enrollDate;
 
-    public UserDTO() {}
-
     public UserDTO(String id, String pwd, String name, Date enrollDate) {
+    /*설명. 1. 필드(멤버변수) */
         this.id = id;
         this.pwd = pwd;
         this.name = name;
         this.enrollDate = enrollDate;
     }
 
+    /*설명. 2. 생성자(기본생성자. 필수로 명시적 작성)*/
+    public UserDTO() {}
+
+    /*설명. 3.모든 멤버 변수를 String으로 반환하는 toString() */
     public void forInformation(){
         System.out.println(id + ", " + pwd + ", " + name + ", " + enrollDate);
     }
 
+    /*설명. 4. 설정자(setter), 접근자(getter)*/
     public String getId() {
         return id;
     }
