@@ -37,6 +37,7 @@ public class UserDTO {
     public UserDTO() {}
 
     /*설명. 3.모든 멤버 변수를 String으로 반환하는 toString() */
+
     public void forInformation(){
         System.out.println(id + ", " + pwd + ", " + name + ", " + enrollDate);
     }
