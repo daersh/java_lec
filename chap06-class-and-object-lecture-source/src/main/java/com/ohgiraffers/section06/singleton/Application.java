@@ -21,12 +21,24 @@ public class Application {
                 * 1. 싱글톤 인스턴스가 너무 많은 일을 하거나 많은 데이터를 공유하면 결합도가 높아짐
                 * 2. 동시성 문제를 고려해서 설계해야함
             * 구현 방법
-                * 1. 이른 초기화(Eager Initialization)
-                * 2. 늦은 초기화(Lazy  Initialization)
+                * 1. 이른 초기화(Eager Initialization) : instance 생성과 동시에 초기화
+                * 2. 늦은 초기화(Lazy  Initialization) : instance가 처음 호출 될 때 초기화
+        --------------------------------------------------------------------------------------------------------
+                                               ** 이른 초기화 vs 늦은 초기화 **
+        --------------------------------------------------------------------------------------------------------
+                * 이른 초기화: 클래스를 로드하는 속도(처음 앱 켜질 때)가 느려지지만 이후 요청에서 속도가 빠르다.
+                * 늦은 초기화: 로드는 빠르지만 첫 번째 요청의 속도가 느리다.
         --------------------------------------------------------------------------------------------------------*/
+
         EagerSingleton eager1 =EagerSingleton.getInstance();
-        Calendar calendar = Calendar.getInstance();
-        System.out.println("calendar.toString(): "+calendar.toString());
+        EagerSingleton eager2 =EagerSingleton.getInstance();
+        System.out.println("eager1 hashcode: "+eager1.hashCode());
+        System.out.println("eager2 hashcode: "+eager2.hashCode());
+        LazySingleton lazy1 = LazySingleton.getInstance();
+        LazySingleton lazy2 = LazySingleton.getInstance();
+        System.out.println("lazy1 hashcode: "+ lazy1.hashCode());
+        System.out.println("lazy2 hashcode: "+ lazy2.hashCode());
+        // 설명. 같은 인스턴스를 받기 때문에 주소를 확인하면 모두 같다.
 
     }
 }
