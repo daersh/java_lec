@@ -3,6 +3,12 @@ package com.ohgiraffers.section01.user_type;
 import java.util.Arrays;
 
 public class Application {
+    /* 필기.
+        * 객체지향프로그래밍이란?
+        * OOP(object oriented programming language)
+            * 추상화, 캡슐화, 상속, 다형성을 적용하여 유지보수성을 고려한 응집력 높고 결합도 낮은
+            * 객체 위주의 개발 방식을 적용한 프로그래밍을 의미한다.
+    * */
     public static void main(String[] args) {
         /*수업목표. 클래스가 무엇인지 이해하고 작성할 수 있다.*/
 
