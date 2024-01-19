@@ -59,6 +59,7 @@ public class BookDTO {
                 '}';
     }
     /*목차. 2. equals() 오버라이딩*/
+    // 설명. bookdto 타입의 객체가 동등하다는 것에 대한 기준을 정하기 위한 오버라이딩.
     @Override
     public boolean equals(Object obj){
         //설명. 가격과 작가가 같은지 확인
@@ -66,6 +67,13 @@ public class BookDTO {
         if(obj==null || getClass() != obj.getClass()) return false;
         BookDTO bookDTO = (BookDTO) obj;
         return number == bookDTO.number && price == bookDTO.price && Objects.equals(title,bookDTO.title)&& Objects.equals(author,bookDTO.author);
+    }
+
+    /*목차. 3. hashCode() 오버라이딩*/
+    /*설명. 우리가 정한 동등 기준을 만족하면 같으 갑ㅂㅅ이 나오도록 오버라이딩*/
+    @Override
+    public int hashCode(){
+        return Objects.hash(number,title,author,price);
     }
 
 }
