@@ -66,6 +66,7 @@ public class Application2 {
         dnum = 8.0;
         dnum = 8.0d;
         fnum = (float) dnum;
+        // fnum = 4.1; X
 
         ch = 'a';
         ch = 97;                 // 설명. char 자료형은 문자를 숫자로 취급한다. 0부터 양수만 취급한다.
