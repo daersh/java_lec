@@ -17,14 +17,19 @@ public class Application1 {
         RabbitFarm<Rabbit> farm1 = new RabbitFarm<Rabbit>();
         RabbitFarm<Bunny> farm2 = new RabbitFarm<>();
         RabbitFarm<DrunkenBunny> farm3 = new RabbitFarm<>();
+
         farm1.setAnimal(new Rabbit());
         farm2.setAnimal(new Bunny());
         farm3.setAnimal(new DrunkenBunny());
+
         farm1.getAnimal().cry();
         farm2.getAnimal().cry();
         farm3.getAnimal().cry();
+
         farm1.setAnimal(new Bunny()); // 참고. 동적 바인딩에 의해 반환형의 Rabbit의 cry가 아닌 Bunny의 cry()가 실행됨
         farm1.getAnimal().cry();
+//        farm2.setAnimal(new DrunkenBunny());  //이건 안됨?!
+
     }
 
 }
