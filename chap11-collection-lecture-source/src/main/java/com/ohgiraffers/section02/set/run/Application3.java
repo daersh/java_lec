@@ -57,7 +57,6 @@ public class Application3 {
         boolean []lotto4= new boolean[31];
         int z=0;        // 6개 입력 시 종료
         int cnt=0;      // 6개 출력 시 종료, 맨 마지막 ',' 안붙이기 위함
-
         while (z<6){
             int next= rand.nextInt(1,31);
             if(lotto4[next]==false){
