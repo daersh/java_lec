@@ -11,17 +11,19 @@ import com.ohgiraffers.section02.extend.Animal.RabbitFarm;
  */
 public class Application2 {
     public static void main(String[] args) {
+        RabbitFarm<Rabbit> rabbitRabbitFarm = new RabbitFarm<>();
         WildCardFarm wildCardFarm = new WildCardFarm();
-        wildCardFarm.anyType(new RabbitFarm<Rabbit>());
-        wildCardFarm.anyType(new RabbitFarm<Bunny>());
-        wildCardFarm.anyType(new RabbitFarm<DrunkenBunny>());
+        wildCardFarm.anyType(rabbitRabbitFarm);
+        wildCardFarm.anyType(rabbitRabbitFarm);
+        wildCardFarm.anyType(rabbitRabbitFarm);
+        wildCardFarm.anyType(rabbitRabbitFarm);
 
         //wildCardFarm.extendsType(new RabbitFarm<Rabbit>());       //참고. err
-        wildCardFarm.extendsType(new RabbitFarm<Bunny>());
+        wildCardFarm.extendsType(rabbitRabbitFarm);
         //wildCardFarm.extendsType(new RabbitFarm<DrunkenBunny>()); //참고. err
 
-        wildCardFarm.superType(new RabbitFarm<Rabbit>());
-        wildCardFarm.superType(new RabbitFarm<Bunny>());
+        wildCardFarm.superType(new RabbitFarm<Rabbit>(new Rabbit()));
+        wildCardFarm.superType(new RabbitFarm<Bunny>(new Bunny()));
 //        wildCardFarm.superType(new RabbitFarm<DrunkenBunny>()); // 참고 err
 
     }

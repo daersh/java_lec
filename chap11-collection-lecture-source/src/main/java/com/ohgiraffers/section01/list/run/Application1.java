@@ -1,9 +1,6 @@
 package com.ohgiraffers.section01.list.run;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * 목표<br><br>
@@ -24,14 +21,17 @@ public class Application1 {
         //참고. 인터페이스인 List는 다형성을 적용한 형태로 많이 사용되고 아래와 같이 동작할 수 있다.
         List list = new ArrayList();
         list = new Vector();        //설명. 이를 통해 List를 사용하여 여러 객체를 가질 수 있음.
-        ListADD(aList);
-        ListPrint(aList);
+//        ListADD(aList);
+//        ListPrint(aList);
         //설명. 배열과 ArrayList에 특정 인덱스에 값 삽입해보기
-        arrayInsert();
-        arrayListInsert();
-        arrayListDuplicate();
-        arrayListEdit();
-        arrayListDelete();
+//        arrayInsert();
+//        arrayListInsert();
+        /*설명. arrayList 기능*/
+//        arrayListDuplicate();
+//        arrayListEdit();
+//        arrayListDelete();
+//        arrayListSortAsc();
+        arrayListSortDesc();
     }
 
     /**모든 타입을 ADD하여 저장할 수 있는 aList<br>
@@ -68,9 +68,11 @@ public class Application1 {
         int[] newArr = new int [intArr.length+1];
         System.arraycopy(intArr,0,newArr,0,intArr.length);
         System.out.println(Arrays.toString(newArr));
+        int temp=2;
         for(int i=intArr.length-1;i>1;i--){
             newArr[i+1]=newArr[i];
         }
+
         newArr[2]=2;
         System.out.println(Arrays.toString(newArr));
     }
@@ -119,4 +121,40 @@ public class Application1 {
         arrayList.remove(1);
         System.out.println("arrayList = " + arrayList);
     }
+    /**5.ArrayList 정렬(오름차순)*/
+    private static void arrayListSortAsc(){
+        List<String> stringList = new ArrayList<>();
+        stringList.add("apple");
+        stringList.add("orange");
+        stringList.add("banana");
+        stringList.add("mango");
+        stringList.add("grape");
+        System.out.println("stringList = " + stringList);
+
+        // 설명. Collections.sort(arrayList);
+        //  greedy(탐욕)문제에서는 compare을 정의하여 정렬 기준을 변경할 수 있다?
+        //  각 타입에 따른 정렬 규칙에 맞춰 정렬을 해줌. default: 오름차순
+        Collections.sort(stringList);
+        System.out.println("stringList = " + stringList);
+    }
+    /**6. ArrayList 정렬 내림차순*/
+    private static void arrayListSortDesc(){
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(123);
+        integerList.add(432);
+        integerList.add(23);
+        integerList.add(4);
+        integerList.add(1);
+        integerList.add(66);
+        integerList.add(777);
+        Collections.sort(integerList);
+        System.out.println("integerList = " + integerList);
+        /*설명 1. ArrayList -> LinkedList로 교체 */
+        integerList = new LinkedList<>(integerList);
+        Iterator<Integer> iter = ((LinkedList<Integer>)integerList).descendingIterator();
+        while (iter.hasNext()){
+            System.out.println(iter.next());
+        }
+    }
+
 }
