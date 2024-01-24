@@ -21,8 +21,8 @@ public class Application {
 
         /* 설명. 몇 가지 File에서 제공하는 메소드 확인*/
         System.out.println("file size: "+file.length()+"byte");
-        System.out.println("file path: "+ file.getPath());
-        System.out.println("file parent path: "+file.getParent());
+        System.out.println("file path: "+ file.getPath());              // 자기 자신인 파일이름까지 들어감
+        System.out.println("file parent path: "+file.getParent());      // 자기 자신 제외
         System.out.println("file 절대 경로: "+ file.getAbsolutePath());
 //        file.
         boolean isDeleted = file.delete();
