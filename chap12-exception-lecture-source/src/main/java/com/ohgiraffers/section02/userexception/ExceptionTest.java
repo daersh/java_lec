@@ -1,14 +1,12 @@
-package com.ohgiraffers.section02.userexception.exception;
+package com.ohgiraffers.section02.userexception;
 
-import com.ohgiraffers.section02.userexception.exception.exception.MoneyNegativeException;
-import com.ohgiraffers.section02.userexception.exception.exception.NotEnoughMoneyException;
-import com.ohgiraffers.section02.userexception.exception.exception.PriceNegativeException;
-
-import java.io.IOException;
+import com.ohgiraffers.section02.userexception.exception.MoneyNegativeException;
+import com.ohgiraffers.section02.userexception.exception.NotEnoughMoneyException;
+import com.ohgiraffers.section02.userexception.exception.PriceNegativeException;
 
 public class ExceptionTest {
 
-    public void checkEnoughMoney(int price, int money) throws PriceNegativeException,MoneyNegativeException, NotEnoughMoneyException {
+    public void checkEnoughMoney(int price, int money) throws PriceNegativeException, MoneyNegativeException, NotEnoughMoneyException {
         /*설명. throw 통한 예외 발생 시 바로 메소드를 호출한 곳으로 예외 인스턴스와 함께 반환된다.*/
         if(price<0){
             throw new PriceNegativeException("상품 가격이 음수일 수 없습니다.");

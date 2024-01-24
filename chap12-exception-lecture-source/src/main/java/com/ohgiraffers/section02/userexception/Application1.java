@@ -1,10 +1,8 @@
-package com.ohgiraffers.section02.userexception.exception;
+package com.ohgiraffers.section02.userexception;
 
-import com.ohgiraffers.section02.userexception.exception.exception.MoneyNegativeException;
-import com.ohgiraffers.section02.userexception.exception.exception.NotEnoughMoneyException;
-import com.ohgiraffers.section02.userexception.exception.exception.PriceNegativeException;
-
-import java.io.IOException;
+import com.ohgiraffers.section02.userexception.exception.MoneyNegativeException;
+import com.ohgiraffers.section02.userexception.exception.NotEnoughMoneyException;
+import com.ohgiraffers.section02.userexception.exception.PriceNegativeException;
 
 /**
  * 목표<br><br>

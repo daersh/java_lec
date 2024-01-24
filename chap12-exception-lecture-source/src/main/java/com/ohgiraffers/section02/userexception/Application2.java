@@ -1,6 +1,4 @@
-package com.ohgiraffers.section02.userexception.exception;
-
-import com.ohgiraffers.section02.userexception.exception.*;
+package com.ohgiraffers.section02.userexception;
 
 /**
  * 목표<br><br>
@@ -18,7 +16,8 @@ public class Application2 {
             /*설명. try 구문에서 예외가 발생하든 발생하지 않든 반드시 실행해야 할 부분이 있다면 작성하는 부분*/
             System.out.println("finally block 무조건 실행된다~~!!");
         }
-
+        /*설명. */
+        System.out.println("프로그램을 종료합니다.");
     }
 
 }
