@@ -44,7 +44,7 @@ public class Application3 {
 
         /*설명.2. for*/
         for (int i = 0; i < linkedList.size(); i++) {
-            System.out.printf(linkedList.get(i)+" ");
+            System.out.printf(linkedList.get(i)+" ");       // 성능은 별로
         }
         System.out.println();
 

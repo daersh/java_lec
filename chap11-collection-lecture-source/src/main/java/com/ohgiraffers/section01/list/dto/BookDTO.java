@@ -1,14 +1,14 @@
 package com.ohgiraffers.section01.list.dto;
 
-public class BookDto implements Comparable<BookDto>{     //설명. 비교하여 정렬 기준 정하기 위한 메서드
+public class BookDTO implements Comparable<BookDTO>{     //설명. 비교하여 정렬 기준 정하기 위한 메서드
     /**Field*/
     private int number;
     private String title;
     private String author;
     private int price;
     /**생성자*/
-    public BookDto() {}
-    public BookDto(int number, String title, String author, int price) {
+    public BookDTO() {}
+    public BookDTO(int number, String title, String author, int price) {
         this.number = number;
         this.title = title;
         this.author = author;
@@ -77,8 +77,8 @@ public class BookDto implements Comparable<BookDto>{     //설명. 비교하여 
 //        return  -this.author.compareTo(((BookDto) o).author);    // 내림차순
 //    }
     @Override
-    public int compareTo(BookDto o) {
+    public int compareTo(BookDTO o) {
         /**설명.Comparable<.BookDto>로 기준을 정한 경우 - 인터페이스에 제네릭을 거는 경우 다운 캐스팅이 불필요하다.*/
-        return this.title.compareTo(((BookDto) o).title);
+        return this.title.compareTo(((BookDTO) o).title);
     }
 }
