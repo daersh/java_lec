@@ -3,13 +3,14 @@ package com.ohgiraffers.section01.exception;
 /**
  * 목표<br><br>
  * 예외에 대해 이해하고 이를 처리하기 위한 문법을 활용할 수 있다. <br><br>
- *
- * @throws:
+ * 예외를-처리할-두가지-방법<br>
+ * 1.throws 통한 위임<br>
+ * 2.try-cathch 통한 처리<br><br>
  * @try: try-catch 구문을 통해 프로그램이 종료되지 않게 처리할 수 있다.
  *      <br>try 안에서 에러 터진 이후 코드는 실행하지 않고 바로 catch 로 이동한다.
  */
-public class Application1 {
-    public static void main(String[] args) {
+public class Application {
+    public static void main(String[] args) /*throws Exception*/{    // main 에 throws exception하면 jvm에 처리 맡긴다는 것.
 
         ExceptionTest exceptionTest = new ExceptionTest();
         //설명. try-catch 구문을 통해 프로그램이 종료되지 않게 처리할 수 있다.
