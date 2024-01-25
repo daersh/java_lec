@@ -12,6 +12,8 @@ public class Application3 {
         DataOutputStream dos = null;
         try {
             dos = new DataOutputStream(new FileOutputStream("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"/*,true*/));
+
+            /*설명. 데이터 타입 별로 해당 데이터 타입에 맞는 출력 메소드를 활용하여 파일에 출력하기(순서 신경쓸 것!!)*/
             // 파일에는 알아불 수 없는 자료형들로 저장됨
             dos.writeUTF("홍길동");
             dos.writeInt(20);
@@ -26,10 +28,10 @@ public class Application3 {
             dos.writeChar('C');
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         DataInputStream dis=null;
         try {
            dis= new DataInputStream(new FileInputStream("src/main/java/com/ohgiraffers/section03/filterstream/testData.txt"/*,true*/));
@@ -46,8 +48,9 @@ public class Application3 {
                 System.out.println(dis.readChar());
             }
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (EOFException e) {//중요 EOFException
+            /*설명. 데이터 입출력은 EOFException을 활용 하여 파일의 끝까지 입력 받는 것을 처리할 수 있다.*/
+            System.out.println("파일 다 읽어냄");
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
