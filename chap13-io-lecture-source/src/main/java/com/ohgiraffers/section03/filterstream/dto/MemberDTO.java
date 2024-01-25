@@ -9,7 +9,8 @@ import java.io.Serializable;
 public class MemberDTO implements Serializable {
     /**필드*/
     private String id;
-    private String pwd;
+    // 중요. transient: 해당 필드를 직렬화에서 제외하겠다라는 뜻. 옛날에 쓰던 방식이니 참고만 할 것.
+    private /*transient*/ String pwd;
     private String name;
     private String email;
     private int age;
