@@ -59,6 +59,11 @@ public class MemberService {
         System.out.printf("삭제할 회원의 memNo 입력: ");
         int memNo= sc.nextInt();
         int result = mr.deletMember(memNo);
+        if (result==1){
+            System.out.println(memNo+"번 회원을 삭제했습니다.");
+        }else{
+            System.out.println("없는 회원입니다.");
+        }
 
     }
 }
