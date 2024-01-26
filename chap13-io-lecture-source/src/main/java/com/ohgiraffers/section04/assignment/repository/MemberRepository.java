@@ -2,6 +2,7 @@ package com.ohgiraffers.section04.assignment.repository;
 
 import com.ohgiraffers.section04.assignment.aggregate.BloodType;
 import com.ohgiraffers.section04.assignment.aggregate.Member;
+import com.ohgiraffers.section04.assignment.stream.MyObjectOutput;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,15 +14,18 @@ public class MemberRepository {
 
     /* 설명. 프로그램이 켜지자 마자(MemberRepository()가 실행되자마자) 파일에 dummy 데이터 추가 및 입력받기 */
     public MemberRepository() {
-        ArrayList<Member> members = new ArrayList<>();
-        members.add(new Member(1, "user01", "pass01", 20,
-                new String[]{"발레", "수영"}, BloodType.A));
-        members.add(new Member(2, "user02", "pass02", 10,
-                new String[]{"게임", "영화시청"}, BloodType.B));
-        members.add(new Member(3, "user03", "pass03", 15,
-                new String[]{"음악감상", "독서", "명상"}, BloodType.O));
+        File file = new File("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat");
+        if(!file.exists()) {
+            ArrayList<Member> members = new ArrayList<>();
+            members.add(new Member(1, "user01", "pass01", 20,
+                    new String[]{"발레", "수영"}, BloodType.A));
+            members.add(new Member(2, "user02", "pass02", 10,
+                    new String[]{"게임", "영화시청"}, BloodType.B));
+            members.add(new Member(3, "user03", "pass03", 15,
+                    new String[]{"음악감상", "독서", "명상"}, BloodType.O));
 
-        saveMembers(members);
+            saveMembers(members);
+        }
         loadMembers();
 
 //        System.out.println("==== repository에서 회원정보 다 읽어왔는지 확인 ====");
@@ -93,5 +97,46 @@ public class MemberRepository {
             if(m.getMemNo() == memNo) return m;
         }
         return null;
+    }
+
+    public int selectLastMemberNo() {
+        return memberList.size();
+    }
+
+    /*설명. 객체 출력 새로 정의한 스트림으로 회원 한명 출력*/
+    public void addMember(Member member) {
+        memberList.add(member);
+    }
+
+    public int saveMember(Member member){
+        MyObjectOutput moo = null;
+        try {
+            //경로 뒤에 true 추가하여 덧붙이기로 전환
+            moo = new MyObjectOutput(new BufferedOutputStream(new FileOutputStream("src/main/java/com/ohgiraffers/section04/assignment/db/memberDB.dat",true)));
+            moo.writeObject(member);
+            moo.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+            try {
+                if(moo!=null)
+                    moo.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return 1;
+    }
+
+    public int deletMember(int memNo) {
+        for (int i = 0; i < memberList.size(); i++) {
+            if(memberList.get(i).getMemNo()==memNo){    // 같은 인덱스 찾기
+                /*설명. 프로그램 상에서 회원을 관리하는 memberList 뿐 아니라 DB(회원파일)도 같이 적용되게 한다.*/
+                memberList.remove(i);
+                saveMembers(memberList);
+                return 1;
+            }
+        }
+        return 0;
     }
 }
