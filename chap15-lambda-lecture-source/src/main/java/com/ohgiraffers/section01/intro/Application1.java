@@ -23,7 +23,5 @@ public class Application1 {
         Calculator c3 = (x,y) -> {return (x+y)*3;};
         Calculator c3_1 = (x,y) ->  (x+y)*3;
         System.out.println("(30+20)*3 ="+ c3.sumTwoNumber(30,20));
-
-        //필기 4.
     }
 }

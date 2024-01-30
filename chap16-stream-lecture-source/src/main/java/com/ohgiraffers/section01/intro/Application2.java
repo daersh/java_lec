@@ -27,9 +27,6 @@ public class Application2 {
         // 동기화 vs 병렬
         System.out.println("====== parallel stream ");
         stringList.parallelStream().forEach(Application2::print);;
-
-        /*목차 4. */
-
     }
 
     private static void print(String s) {
