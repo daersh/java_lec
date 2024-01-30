@@ -15,7 +15,9 @@ import java.util.stream.Stream;
 
 public class ParameterizedTests {
 
-    /* 목차. 1. @ValueSource를 이용한 parameter value 목록 지정 */
+    /**목차. 1. @ValueSource를 이용한 parameter value 목록 지정<br>
+        설명. 넣어준 5가지 케이스로 실행이 된다. short,int,long,float,double,char,java.lang패키지 클래스들(+string)
+     */
     @DisplayName("홀수 짝수 판별 테스트")
     @ParameterizedTest
     @ValueSource(ints = {1, 3, -1, 15, 123})
@@ -28,7 +30,7 @@ public class ParameterizedTests {
         Assertions.assertTrue(result);
     }
 
-    /* 목차. 2. @NullSource와 @EmptySource */
+    /**목차. 2. @NullSource와 @EmptySource */
     @DisplayName("null값 테스트")
     @ParameterizedTest
     @NullSource
@@ -65,7 +67,10 @@ public class ParameterizedTests {
         Assertions.assertTrue(result);
     }
 
-    /* 목차. 3. 열거형을 이용한 @EnumSource 활용하기 */
+
+    /** 목차. 3. 열거형을 이용한 @EnumSource 활용하기<br>
+     * 설명. enum의 필드 갯수만큼 각각 파라미터로 넣어주며 테스트 메소드 동작시킨다.
+    * */
     @DisplayName("Month에 정의된 타입들이 1~12월 사이의 범위인지 테스트")
     @ParameterizedTest
     @EnumSource(Month.class)
@@ -143,7 +148,7 @@ public class ParameterizedTests {
 
     /* 목차. 5. @MethodSource를 활용한 메소드 인수 활용하기 */
     /* 필기. Stream을 반환하는 메소드를 만들어서 이를 테스트에 활용할 수 있다. */
-
+        //  미리 만들어서 하기 위한 것
     private static Stream<Arguments> providerStringSource() {
 
         return Stream.of(
@@ -155,22 +160,22 @@ public class ParameterizedTests {
 
     @DisplayName("메소드 소스를 활용한 대문자 변환 테스트")
     @ParameterizedTest
-//    @MethodSource("providerStringSource")
-    @MethodSourceStringSource
+    @MethodSource("providerStringSource")
+//    @MethodSourceStringSource
     void testToUpperCaseWithMethodSource(String input, String verifyValue) {
-
         //when
         String actual = input.toUpperCase();
-
         //then
         Assertions.assertEquals(verifyValue, actual);
     }
 
-    @Documented
-    @Target(ElementType.METHOD)
-    @Retention(RetentionPolicy.RUNTIME)
-    @MethodSource("providerStringSource")
-    private @interface MethodSourceStringSource {}
+    /**설명. 어노테이션을 만들어서 메소드명을 일일히 작성하지 않아도 되게 할 수 있다.*/
+//    @Documented
+//    @Target(ElementType.METHOD)
+//    @Retention(RetentionPolicy.RUNTIME)
+//    @MethodSource("providerStringSource")
+//    private @interface MethodSourceStringSource {}
+
 
     /* 목차. 6. ArgumentsProvider를 이용한 메소드 소스 사용 */
     @DisplayName("두 수를 더한 결과를 정상적으로 반환하는지 테스트")

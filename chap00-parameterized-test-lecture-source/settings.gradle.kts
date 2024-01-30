@@ -1,2 +1,0 @@
-rootProject.name = "chap00-parameterized-test-lecture-source"
-

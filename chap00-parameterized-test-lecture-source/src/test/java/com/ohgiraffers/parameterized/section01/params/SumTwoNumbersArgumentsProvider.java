@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 public class SumTwoNumbersArgumentsProvider implements ArgumentsProvider {
 
+    //설명. 인자들을 모아둔 것?
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
 
