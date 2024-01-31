@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
-
+/*quick sort*/
 public class Application4Tests {
 
     private static int low1 = 0, low2 = 0;
