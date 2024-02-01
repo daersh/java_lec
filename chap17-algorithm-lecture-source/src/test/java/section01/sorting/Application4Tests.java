@@ -13,7 +13,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
-/*quick sort*/
+/**quick sort<br>
+* 기준 값을 선정해 해당 값보다 작은 데이터와 큰 데이터로 분류하는 것을 반복하여 병합 알고리즘과 함께 실제 정렬 알고리즘으로 많이 활용된다.<br>
+* 시간복잡도: O(n log n), 최악의 경우 O(n^2)
+* */
 public class Application4Tests {
 
     private static int low1 = 0, low2 = 0;

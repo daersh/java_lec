@@ -14,6 +14,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+
+/**
+ * 목표<br><br>
+ * 병합정렬은 데이터를 분할하고 분할한 집합을 정렬하여 합치는 방식으로 정렬한다.<br>
+ * 시간복잡도: O(log n)이다. <br>
+ */
 public class Application5Tests {
 
     private static int low1 = 0, low2 = 0;
