@@ -9,6 +9,6 @@ public class Application1 {
         com.ohgiraffer.section01.method.Calculator cal = new com.ohgiraffer.section01.method.Calculator(100,20);
         System.out.println("100 + 20"+cal.plusTwoNum());
         /*목차. 2. static 호출*/
-        System.out.println("두 수중 큰 값"+ cal.maxResult());
+        System.out.println("두 수중 큰 값"+ Cal.maxResult());
     }
 }
